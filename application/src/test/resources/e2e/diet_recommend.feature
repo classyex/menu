@@ -16,7 +16,7 @@ Feature: 查看一天的推荐饮食
     """
     {
       "userId": "1",
-      "gender": "0",
+      "gender": "1",
       "height": 170,
       "weight": 60,
       "birthday": "1990-01-01",

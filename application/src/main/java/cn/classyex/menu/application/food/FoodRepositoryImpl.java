@@ -19,7 +19,6 @@ public class FoodRepositoryImpl implements FoodRepository {
 
     private final FoodDAO foodDAO;
 
-
     @Override
     public void save(Food food) {
         FoodDO foodDO = FoodDO.from(food);

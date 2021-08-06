@@ -29,7 +29,6 @@ public class FoodFactory extends BaseFactory {
     }
 
     public List<FoodDO> all() {
-        return StreamSupport.stream(foodDao.findAll().spliterator(), false)
-                .collect(Collectors.toList());
+        return StreamSupport.stream(foodDao.findAll().spliterator(), false).collect(Collectors.toList());
     }
 }
