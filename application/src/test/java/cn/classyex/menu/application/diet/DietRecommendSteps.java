@@ -2,12 +2,14 @@ package cn.classyex.menu.application.diet;
 
 import cn.classyex.menu.application.AutoClear;
 import cn.classyex.menu.application.RestCall;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -32,7 +34,13 @@ public class DietRecommendSteps {
 
     @Given("食品库如下：")
     public void 食品库如下(List<Map<String, String>> foods) {
-//        restCall.post("foods", )
+        foods.forEach(food -> {
+            try {
+                restCall.post("foods", new ObjectMapper().writeValueAsString(food));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     @Given("我的个人信息如下：")

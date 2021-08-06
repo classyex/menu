@@ -3,7 +3,7 @@ Feature: 查看一天的推荐饮食
 
   Scenario: 推荐一天的饮食
     Given 食品库如下：
-      | 食物id  | 分类 | 名称 | 单位 | 数量 | 重量(g) | 热量(kcal) | 碳水化合物(g) | 蛋白质(g) | 脂肪(g) | GI值 | 参考图片 | 早餐 | 午餐 | 晚餐 |
+      | id  | category | name | unit | quantity | weight | calorie | carbohydrate | protein | axunge | gi | foodImage | isBreakfast | isLunch | isDinner |
       | 1  | 0 | 米饭 | 碗 | 1 | 100 | 114 | 25.6 | 2.5 | 0.2 | 1 | https://no-image.png | true | true | true |
       | 2  | 0 | 玉米 | 根 | 0.5 | 46 | 106 | 19.9 | 4 | 1.2 | 1 | https://no-image.png | true | true | true |
       | 3  | 1 | 基围虾 | 份 | 1 | 60 | 101 | 3.9 | 18.2 | 1.4 | 1 | https://no-image.png | true | true | true |
