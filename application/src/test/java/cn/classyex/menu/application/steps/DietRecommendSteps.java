@@ -1,7 +1,7 @@
-package cn.classyex.menu.steps;
+package cn.classyex.menu.application.steps;
 
-import cn.classyex.menu.AutoClear;
-import cn.classyex.menu.RestCall;
+import cn.classyex.menu.application.AutoClear;
+import cn.classyex.menu.application.RestCall;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

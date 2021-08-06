@@ -1,4 +1,4 @@
-package cn.classyex.menu;
+package cn.classyex.menu.application;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

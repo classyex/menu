@@ -1,4 +1,4 @@
-package cn.classyex.menu;
+package cn.classyex.menu.application;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.When;
@@ -15,7 +15,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @ActiveProfiles("test")
-@ContextConfiguration(classes = {MenuApplication.class}, loader = SpringBootContextLoader.class)
+@ContextConfiguration(classes = {Application.class}, loader = SpringBootContextLoader.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @CucumberContextConfiguration
 public class ApplicationSteps {

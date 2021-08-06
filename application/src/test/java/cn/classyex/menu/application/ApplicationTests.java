@@ -1,13 +1,13 @@
-package cn.classyex.menu;
+package cn.classyex.menu.application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MenuApplicationTests {
+class ApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }

@@ -1,4 +1,4 @@
-package cn.classyex.menu;
+package cn.classyex.menu.application;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
