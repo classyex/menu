@@ -15,45 +15,72 @@ import java.time.LocalDateTime;
 @Builder
 public class Food {
 
-    private Long id;
+    private final Long id;
     /** 分类，0：主食，1：肉蛋奶，2：果蔬 */
-    private Integer category;
+    private final Integer category;
     /** 名称 */
-    private String name;
+    private final String name;
     /** 单位 */
-    private String unit;
+    private final String unit;
     /** 数量 */
-    private Float quantity;
+    private final Float quantity;
     /** 重量(g) */
-    private Integer weight;
+    private final Integer weight;
     /** 热量(kcal) */
-    private Integer calorie;
+    private final Integer calorie;
     /** 碳水化合物(g) */
-    private Float carbohydrate;
+    private final Float carbohydrate;
     /** 蛋白质(g) */
-    private Float protein;
+    private final Float protein;
     /** 脂肪(g) */
-    private Float axunge;
+    private final Float axunge;
     /** GI值,0:低，1：中，2：高 */
-    private Integer gi;
+    private final Integer gi;
     /** 参考图片 */
-    private String foodImage;
+    private final String foodImage;
     /** 早餐 */
-    private Boolean isBreakfast;
+    private final Boolean isBreakfast;
     /** 午餐 */
-    private Boolean isLunch;
+    private final Boolean isLunch;
     /** 晚餐 */
-    private Boolean isDinner;
+    private final Boolean isDinner;
     /** 添加来源，system/用户id */
-    private String addSource;
+    private final String addSource;
     /** 原始id */
-    private String code;
-    private Integer status;
-    private Boolean isDeleted;
-    private String creator;
-    private LocalDateTime createTime;
-    private String updater;
-    private LocalDateTime updateTime;
+    private final String code;
+    private final Integer status;
+    private final Boolean isDeleted;
+    private final String creator;
+    private final LocalDateTime createTime;
+    private final String updater;
+    private final LocalDateTime updateTime;
 
 
+    public Food newFoodForQuantity(float newQuantity) {
+        return builder()
+                .id(id)
+                .category(category)
+                .name(name)
+                .unit(unit)
+                .quantity(newQuantity)
+                .weight((int) (weight * newQuantity))
+                .calorie((int) (calorie * newQuantity))
+                .carbohydrate(carbohydrate * newQuantity)
+                .protein(protein * newQuantity)
+                .axunge(axunge * newQuantity)
+                .gi(gi)
+                .foodImage(foodImage)
+                .isBreakfast(isBreakfast)
+                .isLunch(isLunch)
+                .isDinner(isDinner)
+                .addSource(addSource)
+                .code(code)
+                .status(status)
+                .isDeleted(isDeleted)
+                .creator(creator)
+                .createTime(createTime)
+                .updater(updater)
+                .updateTime(updateTime)
+                .build();
+    }
 }
