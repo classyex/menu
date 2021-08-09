@@ -2,11 +2,15 @@ package cn.classyex.menu.application.diet;
 
 import cn.classyex.menu.application.AutoClear;
 import cn.classyex.menu.application.RestCall;
+import cn.classyex.menu.application.member.NewMemberForm;
+import cn.classyex.menu.domain.diet.DietRecommend;
+import cn.hutool.json.JSONUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.assertj.core.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
@@ -26,6 +30,8 @@ public class DietRecommendSteps {
     AutoClear autoClear;
 //    @Autowired
 //    SectionFactory sectionFactory;
+    NewMemberForm newMemberForm;
+    DietRecommend dietRecommend;
 
     @Before
     public void setup() {
@@ -44,15 +50,16 @@ public class DietRecommendSteps {
     }
 
     @Given("我的个人信息如下：")
-    public void 我的个人信息如下(String memberInfoStr) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void 我的个人信息如下(String memberInfoStr) throws IOException {
+        newMemberForm = JSONUtil.toBean(memberInfoStr, NewMemberForm.class);
+        restCall.post("members", memberInfoStr);
     }
 
     @When("我每天消耗热量为 {int} 千卡，查看系统给我推荐一天的饮食")
-    public void 我每天消耗热量为_千卡_查看系统给我推荐一天的饮食(Integer calorie) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void 我每天消耗热量为_千卡_查看系统给我推荐一天的饮食(Integer calorie) throws IOException {
+        String response = restCall.get(String.format("diet-recommends?openId=%s&calorie=%s", newMemberForm.getOpenId(), calorie));
+        Assertions.assertThat(response).isNotBlank();
+        dietRecommend = JSONUtil.toBean(response, DietRecommend.class);
     }
 
     @Then("我看到")

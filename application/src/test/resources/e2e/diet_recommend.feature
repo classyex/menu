@@ -15,10 +15,12 @@ Feature: 查看一天的推荐饮食
     And 我的个人信息如下：
     """
     {
-      "userId": "1",
-      "gender": "1",
-      "height": 170,
-      "weight": 60,
+      "openId": "123",
+      "nickname": "张三",
+      "avatar": "https://no-image.png",
+      "gender": 1,
+      "height": 170.0,
+      "weight": 60.0,
       "birthday": "1990-01-01",
       "dietGoal": 1
     }
@@ -33,7 +35,6 @@ Feature: 查看一天的推荐饮食
     "message": "操作成功！",
     "obj": {
         "id": null,
-        "userId": "1",
         "dietDate": null,
         "suggestCalorie": 2061,
         "suggestCalorieRange": {
@@ -62,7 +63,7 @@ Feature: 查看一天的推荐饮食
         "dietDetails": {
             "breakfast": [
                 {
-                    "id": "1",
+                    "id": 1,
                     "category": 0,
                     "name": "米饭",
                     "unit": "碗",
@@ -76,7 +77,7 @@ Feature: 查看一天的推荐饮食
                     "foodImage": "https://no-image.png"
                 },
                 {
-                    "id": "6",
+                    "id": 6,
                     "category": 1,
                     "name": "鸡蛋",
                     "unit": "个",
@@ -90,7 +91,7 @@ Feature: 查看一天的推荐饮食
                     "foodImage": "https://no-image.png"
                 },
                 {
-                    "id": "1420565339513868290",
+                    "id": 7,
                     "category": 2,
                     "name": "生菜",
                     "unit": "份",
@@ -106,7 +107,7 @@ Feature: 查看一天的推荐饮食
             ],
             "lunch": [
                 {
-                    "id": "1419942899393765378",
+                    "id": 2,
                     "category": 0,
                     "name": "玉米",
                     "unit": "根",
@@ -120,7 +121,7 @@ Feature: 查看一天的推荐饮食
                     "foodImage": "https://no-image.png"
                 },
                 {
-                    "id": "1420564570064605186",
+                    "id": 4,
                     "category": 1,
                     "name": "猪瘦肉",
                     "unit": "份",
@@ -134,7 +135,7 @@ Feature: 查看一天的推荐饮食
                     "foodImage": "https://no-image.png"
                 },
                 {
-                    "id": "1420565799192809473",
+                    "id": 8,
                     "category": 2,
                     "name": "韭菜",
                     "unit": "份",
@@ -150,7 +151,7 @@ Feature: 查看一天的推荐饮食
             ],
             "dinner": [
                 {
-                    "id": "1",
+                    "id": 1,
                     "category": 0,
                     "name": "米饭",
                     "unit": "碗",
@@ -164,7 +165,7 @@ Feature: 查看一天的推荐饮食
                     "foodImage": "https://no-image.png"
                 },
                 {
-                    "id": "1420566516875972610",
+                    "id": 3,
                     "category": 1,
                     "name": "基围虾",
                     "unit": "份",
@@ -178,7 +179,7 @@ Feature: 查看一天的推荐饮食
                     "foodImage": "https://no-image.png"
                 },
                 {
-                    "id": "1420565799192809473",
+                    "id": 8,
                     "category": 2,
                     "name": "韭菜",
                     "unit": "份",
