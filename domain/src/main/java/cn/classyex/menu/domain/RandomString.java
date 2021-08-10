@@ -20,7 +20,7 @@ public class RandomString {
     }
 
     private static String getRandomString(int len) {
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         Random random = new Random();
         for (int i = 0; i < len; i++) {
             result.append(SEED.charAt(random.nextInt(SEED.length())));

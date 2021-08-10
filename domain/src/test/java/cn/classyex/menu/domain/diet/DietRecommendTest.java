@@ -47,6 +47,21 @@ public class DietRecommendTest {
         Assertions.assertThat(recommendFoods.get(2).getCalorie()).isEqualTo(52);
     }
 
+    @Test
+    public void random_recommend_1800_calorie_diet_should_default() {
+        RandomElement.setResultSupplier(() -> 1);
+        List<Food> stapleFood = getStapleFoods();
+        List<Food> meat = getMeatFoods();
+        List<Food> vegetables = getVegetablesFoods();
+        DietRecommendOperator operator = new DietRecommendOperator(stapleFood, meat, vegetables);
+        int suggestCalorie = 1800;
+        List<Food> recommendFoods = operator.recommend(suggestCalorie);
+        Assertions.assertThat(recommendFoods.size()).isEqualTo(3);
+        Assertions.assertThat(recommendFoods.get(0).getCalorie()).isEqualTo(106);
+        Assertions.assertThat(recommendFoods.get(1).getCalorie()).isEqualTo(156);
+        Assertions.assertThat(recommendFoods.get(2).getCalorie()).isEqualTo(26);
+    }
+
     private List<Food> getVegetablesFoods() {
         List<Food> vegetables = new ArrayList<>();
         vegetables.add(createFood("生菜,94,13,1.3,1.3,0.3"));
