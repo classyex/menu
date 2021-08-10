@@ -1,12 +1,7 @@
-package cn.classyex.menu.application.diet;
+package cn.classyex.menu.domain.diet.recommend;
 
-import cn.classyex.menu.domain.diet.recommend.DietIngredient;
-import cn.classyex.menu.domain.diet.recommend.DietMeal;
-import cn.classyex.menu.domain.diet.recommend.SuggestCalorieRange;
 import cn.classyex.menu.domain.food.Food;
 import lombok.Data;
-
-import java.time.LocalDateTime;
 
 /**
  * @author yex <br>

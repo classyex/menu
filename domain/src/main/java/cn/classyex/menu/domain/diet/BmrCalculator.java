@@ -9,10 +9,10 @@ public class BmrCalculator {
 
     private Integer gender;
     private Float weight;
-    private Integer height;
+    private Float height;
     private Integer age;
 
-    public BmrCalculator(Integer gender, Float weight, Integer height, Integer age) {
+    public BmrCalculator(Integer gender, Float weight, Float height, Integer age) {
         this.gender = gender;
         this.weight = weight;
         this.height = height;

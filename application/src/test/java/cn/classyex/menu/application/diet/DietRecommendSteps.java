@@ -4,7 +4,7 @@ import cn.classyex.menu.application.AutoClear;
 import cn.classyex.menu.application.RestCall;
 import cn.classyex.menu.application.member.NewMemberForm;
 import cn.classyex.menu.domain.RandomElement;
-import cn.classyex.menu.domain.diet.recommend.DietRecommend;
+import cn.classyex.menu.domain.diet.recommend.DietRecommendVO;
 import cn.hutool.json.JSONUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.Before;

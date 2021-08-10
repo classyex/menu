@@ -1,5 +1,7 @@
 package cn.classyex.menu.domain.member;
 
+import cn.classyex.menu.domain.diet.BmrCalculator;
+import cn.classyex.menu.domain.diet.recommend.SuggestCalorieCalculator;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -33,4 +35,11 @@ public class Member {
     /** 饮食目标 */
     private Integer dietGoal;
 
+    public int suggestCalorieFor(Long lastWeekExerciseHour) {
+        int age = birthday.until(LocalDate.now()).getYears();
+        BmrCalculator calculator = new BmrCalculator(gender, weight, height, age);
+        Float bmr = calculator.calc();
+        SuggestCalorieCalculator calorieCalculator = new SuggestCalorieCalculator(bmr, lastWeekExerciseHour);
+        return calorieCalculator.calc();
+    }
 }
