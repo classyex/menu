@@ -19,7 +19,7 @@ public class DietRecommendController {
     private DietRecommendFacade dietRecommendFacade;
 
     @GetMapping
-    public DietRecommend recommend(DietRecommendForm form) {
+    public DietRecommendVO recommend(DietRecommendForm form) {
         return dietRecommendFacade.recommendDiet(form);
     }
 

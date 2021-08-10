@@ -31,7 +31,7 @@ public class DietRecommendFacade {
     private FoodService foodService;
     private MemberService memberService;
 
-    public DietRecommend recommendDiet(DietRecommendForm form) {
+    public DietRecommendVO recommendDiet(DietRecommendForm form) {
         Member member = memberService.getByOpenId(form.getOpenId());
         Long lastWeekExerciseHour = queryLastWeekExerciseHour(member.getId());
         int suggestCalorie = getSuggestCalorie(member, lastWeekExerciseHour);
@@ -41,11 +41,13 @@ public class DietRecommendFacade {
         dietMeals.setBreakfast(recommendBreakfast(suggestCalorie));
         dietMeals.setLunch(recommendLunch(suggestCalorie));
         dietMeals.setDinner(recommendDinner(suggestCalorie));
-        return new DietRecommend(suggestCalorie, dietGoal.calcSuggestCalorieRange(),
+
+        DietRecommend dietRecommend = new DietRecommend(suggestCalorie, dietGoal.calcSuggestCalorieRange(),
                 dietMeals.sumCalorieAmount(), member.getDietGoal(),
                 dietGoal.calcCarbohydrateIngredient(dietMeals.sumCarbohydrateAmount()),
                 dietGoal.calcProteinIngredient(dietMeals.sumProteinAmount()),
                 dietGoal.calcAxungeIngredient(dietMeals.sumAxungeAmount()), dietMeals);
+        return DietRecommendVO.from(dietRecommend);
         /*return DietRecommend.builder()
                 .dietGoal(member.getDietGoal())
                 .suggestCalorie(suggestCalorie)
