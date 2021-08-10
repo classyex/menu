@@ -9,9 +9,7 @@ import lombok.*;
  * @date 2021/8/9 10:19 <br>
  */
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Builder
 public class DietRecommend {
 
     /** 推荐摄入热量 */

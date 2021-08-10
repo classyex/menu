@@ -12,8 +12,7 @@ import java.time.LocalDateTime;
  * @version 1.0 <br>
  * @date 2021/8/6 12:01 <br>
  */
-@Getter
-@Setter
+@Data
 public class NewFoodForm {
 
     /** 分类，0：主食，1：肉蛋奶，2：果蔬 */
@@ -46,24 +45,7 @@ public class NewFoodForm {
     private Boolean isDinner;
 
     public Food toEntity(String addSource) {
-        Food food = new Food();
-        food.setAddSource(addSource);
-        food.setCategory(category);
-        food.setName(name);
-        food.setUnit(unit);
-        food.setQuantity(quantity);
-        food.setWeight(weight);
-        food.setCalorie(calorie);
-        food.setCarbohydrate(carbohydrate);
-        food.setProtein(protein);
-        food.setAxunge(axunge);
-        food.setGi(gi);
-        food.setFoodImage(foodImage);
-        food.setIsBreakfast(isBreakfast);
-        food.setIsLunch(isLunch);
-        food.setIsDinner(isDinner);
-        return food;
-        /*return Food.builder()
+        return Food.builder()
                 .addSource(addSource)
                 .axunge(axunge)
                 .calorie(calorie)
@@ -79,6 +61,6 @@ public class NewFoodForm {
                 .quantity(quantity)
                 .weight(weight)
                 .unit(unit)
-                .build();*/
+                .build();
     }
 }

@@ -42,13 +42,7 @@ public class DietRecommendFacade {
         dietMeals.setLunch(recommendLunch(suggestCalorie));
         dietMeals.setDinner(recommendDinner(suggestCalorie));
 
-        DietRecommend dietRecommend = new DietRecommend(suggestCalorie, dietGoal.calcSuggestCalorieRange(),
-                dietMeals.sumCalorieAmount(), member.getDietGoal(),
-                dietGoal.calcCarbohydrateIngredient(dietMeals.sumCarbohydrateAmount()),
-                dietGoal.calcProteinIngredient(dietMeals.sumProteinAmount()),
-                dietGoal.calcAxungeIngredient(dietMeals.sumAxungeAmount()), dietMeals);
-        return DietRecommendVO.from(dietRecommend);
-        /*return DietRecommend.builder()
+        DietRecommend dietRecommend = DietRecommend.builder()
                 .dietGoal(member.getDietGoal())
                 .suggestCalorie(suggestCalorie)
                 .suggestCalorieRange(dietGoal.calcSuggestCalorieRange())
@@ -57,7 +51,8 @@ public class DietRecommendFacade {
                 .axunge(dietGoal.calcAxungeIngredient(dietMeals.sumAxungeAmount()))
                 .carbohydrate(dietGoal.calcCarbohydrateIngredient(dietMeals.sumCarbohydrateAmount()))
                 .protein(dietGoal.calcProteinIngredient(dietMeals.sumProteinAmount()))
-                .build();*/
+                .build();
+        return DietRecommendVO.from(dietRecommend);
     }
 
     private List<Food> recommendDinner(int suggestCalorie) {
@@ -96,7 +91,7 @@ public class DietRecommendFacade {
     private int getSuggestCalorie(Member member, Long lastWeekExerciseHour) {
         int age = member.getBirthday().until(LocalDate.now()).getYears();
         BmrCalculator calculator = new BmrCalculator(member.getGender(), member.getWeight(), member.getHeight().intValue(), age);
-        Double bmr = calculator.calc();
+        Float bmr = calculator.calc();
         SuggestCalorieCalculator calorieCalculator = new SuggestCalorieCalculator(bmr, lastWeekExerciseHour);
         return calorieCalculator.calc();
     }

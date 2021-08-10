@@ -25,9 +25,9 @@ public class Member {
     /** 性别，1：男，2：女 */
     private Integer gender;
     /** 身高（cm) */
-    private Double height;
+    private Float height;
     /** 体重（kg) */
-    private Double weight;
+    private Float weight;
     /** 生日 */
     private LocalDate birthday;
     /** 饮食目标 */

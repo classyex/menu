@@ -86,11 +86,7 @@ public class FoodDO {
 
 
     public Food toEntity() {
-        return new Food(id, category, name, unit, quantity, weight, calorie,
-                carbohydrate, protein, axunge,
-                gi, foodImage, isBreakfast, isLunch, isDinner, addSource, code,
-                status, isDeleted, creator, createTime, updater, updateTime);
-        /*return Food.builder()
+        return Food.builder()
                 .id(id)
                 .category(category)
                 .name(name)
@@ -114,6 +110,6 @@ public class FoodDO {
                 .createTime(createTime)
                 .updater(updater)
                 .updateTime(updateTime)
-                .build();*/
+                .build();
     }
 }

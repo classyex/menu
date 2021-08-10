@@ -30,7 +30,7 @@ Feature: 查看一天的推荐饮食
 
     Then 我看到
     """
-    {
+{
     "currentCalorie": 1583,
     "dietGoal": 1,
     "suggestCalorie": 1832,

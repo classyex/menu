@@ -10,9 +10,7 @@ import java.time.LocalDateTime;
  * @date 2021/8/6 14:17 <br>
  */
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Builder
 public class Food {
 
     private Long id;
@@ -57,11 +55,7 @@ public class Food {
 
 
     public Food newFoodForQuantity(float newQuantity) {
-        return new Food(id, category, name, unit, newQuantity, (int) (weight * newQuantity), (int) (calorie * newQuantity),
-                carbohydrate * newQuantity, protein * newQuantity, axunge * newQuantity,
-                gi, foodImage, isBreakfast, isLunch, isDinner, addSource, code,
-                status, isDeleted, creator, createTime, updater, updateTime);
-        /*return builder()
+        return builder()
                 .id(id)
                 .category(category)
                 .name(name)
@@ -85,6 +79,6 @@ public class Food {
                 .createTime(createTime)
                 .updater(updater)
                 .updateTime(updateTime)
-                .build();*/
+                .build();
     }
 }

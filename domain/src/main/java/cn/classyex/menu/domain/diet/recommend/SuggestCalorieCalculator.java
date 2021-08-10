@@ -7,32 +7,32 @@ package cn.classyex.menu.domain.diet.recommend;
  */
 public class SuggestCalorieCalculator {
 
-    private Double bmr;
-    private Double factor;
+    private Float bmr;
+    private Float factor;
 
-    public SuggestCalorieCalculator(Double bmr, Long lastWeekExerciseHour) {
+    public SuggestCalorieCalculator(Float bmr, Long lastWeekExerciseHour) {
         this.bmr = bmr;
         this.factor = calcFactor(lastWeekExerciseHour);
     }
 
-    private Double calcFactor(Long lastWeekExerciseTime) {
+    private Float calcFactor(Long lastWeekExerciseTime) {
         if (lastWeekExerciseTime == null) {
-            return 1.2;
+            return 1.2F;
         }
         double hour = lastWeekExerciseTime / 3600D;
         if (hour >= 5) {
-            return 1.65;
+            return 1.65F;
         }
         if (hour >= 3) {
-            return 1.55;
+            return 1.55F;
         }
         if (hour >= 1) {
-            return 1.45;
+            return 1.45F;
         }
         if (hour > 0) {
-            return 1.35;
+            return 1.35F;
         }
-        return 1.2;
+        return 1.2F;
     }
 
     public int calc() {

@@ -71,15 +71,15 @@ public class DietRecommendTest {
 
     private Food createFood(String param) {
         String[] split = param.split(",");
-        Food food = new Food();
-        food.setName(split[0]);
-        food.setWeight(Integer.valueOf(split[1]));
-        food.setCalorie(Integer.valueOf(split[2]));
-        food.setCarbohydrate(Float.valueOf(split[3]));
-        food.setProtein(Float.valueOf(split[4]));
-        food.setAxunge(Float.valueOf(split[5]));
-        food.setQuantity(1F);
-        return food;
+        return Food.builder()
+                .name(split[0])
+                .weight(Integer.valueOf(split[1]))
+                .calorie(Integer.valueOf(split[2]))
+                .carbohydrate(Float.valueOf(split[3]))
+                .protein(Float.valueOf(split[4]))
+                .axunge(Float.valueOf(split[5]))
+                .quantity(1F)
+                .build();
     }
 
 

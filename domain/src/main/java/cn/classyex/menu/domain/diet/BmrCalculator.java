@@ -8,26 +8,26 @@ package cn.classyex.menu.domain.diet;
 public class BmrCalculator {
 
     private Integer gender;
-    private Double weight;
+    private Float weight;
     private Integer height;
     private Integer age;
 
-    public BmrCalculator(Integer gender, Double weight, Integer height, Integer age) {
+    public BmrCalculator(Integer gender, Float weight, Integer height, Integer age) {
         this.gender = gender;
         this.weight = weight;
         this.height = height;
         this.age = age;
     }
 
-    public Double male() {
-        return 13.7 * weight + 5 * height - 6.8 * age + 66;
+    public Float male() {
+        return 13.7F * weight + 5 * height - 6.8F * age + 66;
     }
 
-    public Double female() {
-        return 9.6 * weight + 1.8 * height - 4.7 * age + 655;
+    public Float female() {
+        return 9.6F * weight + 1.8F * height - 4.7F * age + 655;
     }
 
-    public Double calc() {
+    public Float calc() {
         if (gender == 1) {
             return male();
         }
