@@ -1,5 +1,6 @@
 package cn.classyex.menu.application.diet;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,8 +9,7 @@ import lombok.Setter;
  * @version 1.0 <br>
  * @date 2021/8/9 10:16 <br>
  */
-@Setter
-@Getter
+@Data
 public class DietRecommendForm {
 
     private String openId;

@@ -22,9 +22,7 @@ public class DietRecommendFacade {
 
     public DietRecommendVO recommendDiet(DietRecommendForm form) {
         Member member = memberService.getByOpenId(form.getOpenId());
-        Long lastWeekExerciseHour = queryLastWeekExerciseHour(member.getId());
-        int suggestCalorie = member.suggestCalorieFor(lastWeekExerciseHour);
-
+        int suggestCalorie = member.suggestCalorieFor(queryLastWeekExerciseHour(member.getId()));
         DietRecommend dietRecommend = new DietRecommend(foodService, suggestCalorie, member.getDietGoal());
         return dietRecommend.toVO();
     }

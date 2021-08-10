@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class DietRecommendController {
 
-    private DietRecommendFacade dietRecommendFacade;
+    private final DietRecommendFacade dietRecommendFacade;
 
     @GetMapping
     public DietRecommendVO recommend(DietRecommendForm form) {
