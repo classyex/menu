@@ -8,6 +8,10 @@ public class RandomString {
     static Supplier<String> resultSupplier;
     private static final String SEED = "01234567890";
 
+    private RandomString() {
+
+    }
+
     public static void setResultSupplier(Supplier<String> resultSupplier) {
         RandomString.resultSupplier = resultSupplier;
     }

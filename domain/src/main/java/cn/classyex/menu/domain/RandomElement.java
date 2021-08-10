@@ -11,6 +11,9 @@ public class RandomElement {
 
     private static Supplier<Integer> resultSupplier;
 
+    private RandomElement() {
+    }
+
     public static void setResultSupplier(Supplier<Integer> resultSupplier) {
         RandomElement.resultSupplier = resultSupplier;
     }

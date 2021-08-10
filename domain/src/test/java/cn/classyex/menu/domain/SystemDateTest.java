@@ -36,6 +36,6 @@ public class SystemDateTest {
         SystemDate.setNowSupplier(date);
         Assertions.assertThat(SystemDate.today()).isEqualTo("2021-08-11");
     }
-    
+
 
 }

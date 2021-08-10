@@ -40,6 +40,7 @@ public class RandomElementTest {
     @Test
     public void no_preset_random_should_be_random() {
         List<String> list = Arrays.asList("a", "b", "c");
+        RandomElement.setResultSupplier(null);
         String randomEle = RandomElement.randomEle(list);
         Assertions.assertThat(randomEle).isIn(list);
     }
