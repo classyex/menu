@@ -46,7 +46,24 @@ public class NewFoodForm {
     private Boolean isDinner;
 
     public Food toEntity(String addSource) {
-        return Food.builder()
+        Food food = new Food();
+        food.setAddSource(addSource);
+        food.setCategory(category);
+        food.setName(name);
+        food.setUnit(unit);
+        food.setQuantity(quantity);
+        food.setWeight(weight);
+        food.setCalorie(calorie);
+        food.setCarbohydrate(carbohydrate);
+        food.setProtein(protein);
+        food.setAxunge(axunge);
+        food.setGi(gi);
+        food.setFoodImage(foodImage);
+        food.setIsBreakfast(isBreakfast);
+        food.setIsLunch(isLunch);
+        food.setIsDinner(isDinner);
+        return food;
+        /*return Food.builder()
                 .addSource(addSource)
                 .axunge(axunge)
                 .calorie(calorie)
@@ -62,6 +79,6 @@ public class NewFoodForm {
                 .quantity(quantity)
                 .weight(weight)
                 .unit(unit)
-                .build();
+                .build();*/
     }
 }

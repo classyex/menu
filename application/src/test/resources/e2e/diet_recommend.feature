@@ -31,169 +31,163 @@ Feature: 查看一天的推荐饮食
     Then 我看到
     """
     {
-    "code": 2000,
-    "message": "操作成功！",
-    "obj": {
-        "id": null,
-        "dietDate": null,
-        "suggestCalorie": 2061,
-        "suggestCalorieRange": {
-            "floor": 0,
-            "minSuggest": 1648,
-            "maxSuggest": 2061,
-            "ceiling": 3709
-        },
-        "currentCalorie": 1961,
-        "dietGoal": 1,
-        "carbohydrate": {
-            "value": 218.0,
-            "minSuggest": 0.0,
-            "maxSuggest": 240.45
-        },
-        "protein": {
-            "value": 159.59999,
-            "minSuggest": 0.0,
-            "maxSuggest": 206.1
-        },
-        "axunge": {
-            "value": 50.399998,
-            "minSuggest": 0.0,
-            "maxSuggest": 30.533335
-        },
-        "dietDetails": {
-            "breakfast": [
-                {
-                    "id": 1,
-                    "category": 0,
-                    "name": "米饭",
-                    "unit": "碗",
-                    "quantity": 2.0,
-                    "weight": 200,
-                    "calorie": 228,
-                    "carbohydrate": 51.2,
-                    "protein": 5.0,
-                    "axunge": 0.4,
-                    "gi": 1,
-                    "foodImage": "https://no-image.png"
-                },
-                {
-                    "id": 6,
-                    "category": 1,
-                    "name": "鸡蛋",
-                    "unit": "个",
-                    "quantity": 2.0,
-                    "weight": 176,
-                    "calorie": 312,
-                    "carbohydrate": 2.6,
-                    "protein": 25.6,
-                    "axunge": 22.2,
-                    "gi": 1,
-                    "foodImage": "https://no-image.png"
-                },
-                {
-                    "id": 7,
-                    "category": 2,
-                    "name": "生菜",
-                    "unit": "份",
-                    "quantity": 2.0,
-                    "weight": 188,
-                    "calorie": 26,
-                    "carbohydrate": 2.6,
-                    "protein": 2.6,
-                    "axunge": 0.6,
-                    "gi": 1,
-                    "foodImage": "https://no-image.png"
-                }
-            ],
-            "lunch": [
-                {
-                    "id": 2,
-                    "category": 0,
-                    "name": "玉米",
-                    "unit": "根",
-                    "quantity": 3.0,
-                    "weight": 138,
-                    "calorie": 318,
-                    "carbohydrate": 59.699997,
-                    "protein": 12.0,
-                    "axunge": 3.6000001,
-                    "gi": 1,
-                    "foodImage": "https://no-image.png"
-                },
-                {
-                    "id": 4,
-                    "category": 1,
-                    "name": "猪瘦肉",
-                    "unit": "份",
-                    "quantity": 3.0,
-                    "weight": 300,
-                    "calorie": 429,
-                    "carbohydrate": 4.5,
-                    "protein": 60.899998,
-                    "axunge": 18.599998,
-                    "gi": 1,
-                    "foodImage": "https://no-image.png"
-                },
-                {
-                    "id": 8,
-                    "category": 2,
-                    "name": "韭菜",
-                    "unit": "份",
-                    "quantity": 2.0,
-                    "weight": 180,
-                    "calorie": 52,
-                    "carbohydrate": 6.4,
-                    "protein": 4.8,
-                    "axunge": 0.8,
-                    "gi": 1,
-                    "foodImage": "https://no-image.png"
-                }
-            ],
-            "dinner": [
-                {
-                    "id": 1,
-                    "category": 0,
-                    "name": "米饭",
-                    "unit": "碗",
-                    "quantity": 3.0,
-                    "weight": 300,
-                    "calorie": 342,
-                    "carbohydrate": 76.8,
-                    "protein": 7.5,
-                    "axunge": 0.6,
-                    "gi": 1,
-                    "foodImage": "https://no-image.png"
-                },
-                {
-                    "id": 3,
-                    "category": 1,
-                    "name": "基围虾",
-                    "unit": "份",
-                    "quantity": 2.0,
-                    "weight": 120,
-                    "calorie": 202,
-                    "carbohydrate": 7.8,
-                    "protein": 36.4,
-                    "axunge": 2.8,
-                    "gi": 1,
-                    "foodImage": "https://no-image.png"
-                },
-                {
-                    "id": 8,
-                    "category": 2,
-                    "name": "韭菜",
-                    "unit": "份",
-                    "quantity": 2.0,
-                    "weight": 180,
-                    "calorie": 52,
-                    "carbohydrate": 6.4,
-                    "protein": 4.8,
-                    "axunge": 0.8,
-                    "gi": 1,
-                    "foodImage": "https://no-image.png"
-                }
-            ]
-        }
+    "suggestCalorie": 2061,
+    "suggestCalorieRange": {
+        "floor": 0,
+        "minSuggest": 1648,
+        "maxSuggest": 2061,
+        "ceiling": 3709
+    },
+    "currentCalorie": 1961,
+    "dietGoal": 1,
+    "carbohydrate": {
+        "value": 218.0,
+        "minSuggest": 0.0,
+        "maxSuggest": 240.45
+    },
+    "protein": {
+        "value": 159.59999,
+        "minSuggest": 0.0,
+        "maxSuggest": 206.1
+    },
+    "axunge": {
+        "value": 50.399998,
+        "minSuggest": 0.0,
+        "maxSuggest": 30.533335
+    },
+    "dietMeal": {
+        "breakfast": [
+            {
+                "id": 1,
+                "category": 0,
+                "name": "米饭",
+                "unit": "碗",
+                "quantity": 2.0,
+                "weight": 200,
+                "calorie": 228,
+                "carbohydrate": 51.2,
+                "protein": 5.0,
+                "axunge": 0.4,
+                "gi": 1,
+                "foodImage": "https://no-image.png"
+            },
+            {
+                "id": 6,
+                "category": 1,
+                "name": "鸡蛋",
+                "unit": "个",
+                "quantity": 2.0,
+                "weight": 176,
+                "calorie": 312,
+                "carbohydrate": 2.6,
+                "protein": 25.6,
+                "axunge": 22.2,
+                "gi": 1,
+                "foodImage": "https://no-image.png"
+            },
+            {
+                "id": 7,
+                "category": 2,
+                "name": "生菜",
+                "unit": "份",
+                "quantity": 2.0,
+                "weight": 188,
+                "calorie": 26,
+                "carbohydrate": 2.6,
+                "protein": 2.6,
+                "axunge": 0.6,
+                "gi": 1,
+                "foodImage": "https://no-image.png"
+            }
+        ],
+        "lunch": [
+            {
+                "id": 2,
+                "category": 0,
+                "name": "玉米",
+                "unit": "根",
+                "quantity": 3.0,
+                "weight": 138,
+                "calorie": 318,
+                "carbohydrate": 59.699997,
+                "protein": 12.0,
+                "axunge": 3.6000001,
+                "gi": 1,
+                "foodImage": "https://no-image.png"
+            },
+            {
+                "id": 4,
+                "category": 1,
+                "name": "猪瘦肉",
+                "unit": "份",
+                "quantity": 3.0,
+                "weight": 300,
+                "calorie": 429,
+                "carbohydrate": 4.5,
+                "protein": 60.899998,
+                "axunge": 18.599998,
+                "gi": 1,
+                "foodImage": "https://no-image.png"
+            },
+            {
+                "id": 8,
+                "category": 2,
+                "name": "韭菜",
+                "unit": "份",
+                "quantity": 2.0,
+                "weight": 180,
+                "calorie": 52,
+                "carbohydrate": 6.4,
+                "protein": 4.8,
+                "axunge": 0.8,
+                "gi": 1,
+                "foodImage": "https://no-image.png"
+            }
+        ],
+        "dinner": [
+            {
+                "id": 1,
+                "category": 0,
+                "name": "米饭",
+                "unit": "碗",
+                "quantity": 3.0,
+                "weight": 300,
+                "calorie": 342,
+                "carbohydrate": 76.8,
+                "protein": 7.5,
+                "axunge": 0.6,
+                "gi": 1,
+                "foodImage": "https://no-image.png"
+            },
+            {
+                "id": 3,
+                "category": 1,
+                "name": "基围虾",
+                "unit": "份",
+                "quantity": 2.0,
+                "weight": 120,
+                "calorie": 202,
+                "carbohydrate": 7.8,
+                "protein": 36.4,
+                "axunge": 2.8,
+                "gi": 1,
+                "foodImage": "https://no-image.png"
+            },
+            {
+                "id": 8,
+                "category": 2,
+                "name": "韭菜",
+                "unit": "份",
+                "quantity": 2.0,
+                "weight": 180,
+                "calorie": 52,
+                "carbohydrate": 6.4,
+                "protein": 4.8,
+                "axunge": 0.8,
+                "gi": 1,
+                "foodImage": "https://no-image.png"
+            }
+        ]
     }
 }
     """

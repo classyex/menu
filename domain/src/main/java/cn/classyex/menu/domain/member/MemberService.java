@@ -15,4 +15,8 @@ public class MemberService {
     public void save(Member member) {
         memberRepository.save(member);
     }
+
+    public Member getByOpenId(String openId) {
+        return memberRepository.getByOpenId(openId);
+    }
 }

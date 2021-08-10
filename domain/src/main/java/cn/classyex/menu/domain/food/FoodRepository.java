@@ -1,5 +1,7 @@
 package cn.classyex.menu.domain.food;
 
+import java.util.List;
+
 /**
  * @author yex <br>
  * @version 1.0 <br>
@@ -10,5 +12,11 @@ public interface FoodRepository {
 
     void save(Food food);
 
+
+    List<Food> findBreakfastFood();
+
+    List<Food> findLunchFood();
+
+    List<Food> findDinnerFood();
 
 }

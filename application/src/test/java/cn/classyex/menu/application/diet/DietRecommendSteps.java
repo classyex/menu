@@ -3,7 +3,7 @@ package cn.classyex.menu.application.diet;
 import cn.classyex.menu.application.AutoClear;
 import cn.classyex.menu.application.RestCall;
 import cn.classyex.menu.application.member.NewMemberForm;
-import cn.classyex.menu.domain.diet.DietRecommend;
+import cn.classyex.menu.domain.diet.recommend.DietRecommend;
 import cn.hutool.json.JSONUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.Before;
@@ -28,8 +28,6 @@ public class DietRecommendSteps {
     RestCall restCall;
     @Autowired
     AutoClear autoClear;
-//    @Autowired
-//    SectionFactory sectionFactory;
     NewMemberForm newMemberForm;
     DietRecommend dietRecommend;
 
@@ -64,8 +62,7 @@ public class DietRecommendSteps {
 
     @Then("我看到")
     public void 我看到(String result) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assertions.assertThat(JSONUtil.toJsonPrettyStr(dietRecommend)).isEqualTo(JSONUtil.toJsonPrettyStr(JSONUtil.parseObj(result)));
     }
 
 

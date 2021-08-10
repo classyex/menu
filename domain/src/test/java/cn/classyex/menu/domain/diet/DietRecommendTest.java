@@ -25,6 +25,7 @@ public class DietRecommendTest {
         int suggestCalorie = 600;
         DietRecommendOperator operator = new DietRecommendOperator(stapleFood, meat, vegetables);
         List<Food> recommendFoods = operator.recommend(suggestCalorie);
+
         Assertions.assertThat(recommendFoods.size()).isEqualTo(3);
         Assertions.assertThat(recommendFoods.get(0).getCalorie()).isEqualTo(228);
         Assertions.assertThat(recommendFoods.get(1).getCalorie()).isEqualTo(286);
@@ -70,15 +71,15 @@ public class DietRecommendTest {
 
     private Food createFood(String param) {
         String[] split = param.split(",");
-        return Food.builder()
-                .name(split[0])
-                .weight(Integer.valueOf(split[1]))
-                .calorie(Integer.valueOf(split[2]))
-                .carbohydrate(Float.valueOf(split[3]))
-                .protein(Float.valueOf(split[4]))
-                .axunge(Float.valueOf(split[5]))
-                .quantity(1F)
-                .build();
+        Food food = new Food();
+        food.setName(split[0]);
+        food.setWeight(Integer.valueOf(split[1]));
+        food.setCalorie(Integer.valueOf(split[2]));
+        food.setCarbohydrate(Float.valueOf(split[3]));
+        food.setProtein(Float.valueOf(split[4]));
+        food.setAxunge(Float.valueOf(split[5]));
+        food.setQuantity(1F);
+        return food;
     }
 
 

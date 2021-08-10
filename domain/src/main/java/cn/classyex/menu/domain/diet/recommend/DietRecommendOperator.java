@@ -6,8 +6,6 @@ import cn.classyex.menu.domain.food.Food;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cn.hutool.core.util.RandomUtil.randomEle;
-
 /**
  * @author yex <br>
  * @version 1.0 <br>

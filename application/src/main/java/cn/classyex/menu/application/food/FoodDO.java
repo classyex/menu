@@ -83,4 +83,37 @@ public class FoodDO {
                 .addSource(food.getAddSource())
                 .build();
     }
+
+
+    public Food toEntity() {
+        return new Food(id, category, name, unit, quantity, weight, calorie,
+                carbohydrate, protein, axunge,
+                gi, foodImage, isBreakfast, isLunch, isDinner, addSource, code,
+                status, isDeleted, creator, createTime, updater, updateTime);
+        /*return Food.builder()
+                .id(id)
+                .category(category)
+                .name(name)
+                .unit(unit)
+                .quantity(quantity)
+                .weight(weight)
+                .calorie(calorie)
+                .carbohydrate(carbohydrate)
+                .protein(protein)
+                .axunge(axunge)
+                .gi(gi)
+                .foodImage(foodImage)
+                .isBreakfast(isBreakfast)
+                .isLunch(isLunch)
+                .isDinner(isDinner)
+                .addSource(addSource)
+                .code(code)
+                .status(status)
+                .isDeleted(isDeleted)
+                .creator(creator)
+                .createTime(createTime)
+                .updater(updater)
+                .updateTime(updateTime)
+                .build();*/
+    }
 }

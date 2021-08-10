@@ -1,6 +1,6 @@
 package cn.classyex.menu.application.diet;
 
-import cn.classyex.menu.domain.diet.DietRecommend;
+import cn.classyex.menu.domain.diet.recommend.DietRecommend;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

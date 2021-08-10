@@ -61,4 +61,18 @@ public class MemberDO {
                 .dietGoal(member.getDietGoal())
                 .build();
     }
+
+    public Member toEntity() {
+        return Member.builder()
+                .id(id)
+                .openId(openId)
+                .nickname(nickname)
+                .avatar(avatar)
+                .gender(gender)
+                .height(height)
+                .weight(weight)
+                .birthday(birthday)
+                .dietGoal(dietGoal)
+                .build();
+    }
 }

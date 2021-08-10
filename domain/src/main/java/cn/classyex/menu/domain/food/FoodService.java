@@ -2,6 +2,8 @@ package cn.classyex.menu.domain.food;
 
 import lombok.AllArgsConstructor;
 
+import java.util.List;
+
 /**
  * @author yex <br>
  * @version 1.0 <br>
@@ -15,5 +17,17 @@ public class FoodService {
 
     public void save(Food food) {
         foodRepository.save(food);
+    }
+
+    public List<Food> findBreakfastFood() {
+        return foodRepository.findBreakfastFood();
+    }
+
+    public List<Food> findLunchFood() {
+        return foodRepository.findLunchFood();
+    }
+
+    public List<Food> findDinnerFood() {
+        return foodRepository.findDinnerFood();
     }
 }
