@@ -8,7 +8,6 @@ import lombok.Getter;
  * @version 1.0 <br>
  * @date 2021/7/30 11:31 <br>
  */
-@Getter
 public enum MealEnum {
 
     BREAKFAST(1),

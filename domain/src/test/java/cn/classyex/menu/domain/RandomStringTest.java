@@ -24,6 +24,7 @@ public class RandomStringTest {
 
     @Test
     public void no_preset_random_3_length_should_be_39() {
+        RandomString.setResultSupplier(null);
         Assertions.assertThat(RandomString.randomUniqueString(3).length()).isEqualTo(39);
     }
 

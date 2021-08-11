@@ -19,11 +19,11 @@ public class BmrCalculator {
         this.age = age;
     }
 
-    public Float male() {
+    private Float male() {
         return 13.7F * weight + 5 * height - 6.8F * age + 66;
     }
 
-    public Float female() {
+    private Float female() {
         return 9.6F * weight + 1.8F * height - 4.7F * age + 655;
     }
 
