@@ -35,11 +35,11 @@ public class Member {
     /** 饮食目标 */
     private Integer dietGoal;
 
-    public int suggestCalorieFor(Long lastWeekExerciseHour) {
+    public int suggestCalorieFor(Long lastWeekExerciseSeconds) {
         int age = birthday.until(LocalDate.now()).getYears();
         BmrCalculator calculator = new BmrCalculator(gender, weight, height, age);
         Float bmr = calculator.calc();
-        SuggestCalorieCalculator calorieCalculator = new SuggestCalorieCalculator(bmr, lastWeekExerciseHour);
+        SuggestCalorieCalculator calorieCalculator = new SuggestCalorieCalculator(bmr, lastWeekExerciseSeconds);
         return calorieCalculator.calc();
     }
 }

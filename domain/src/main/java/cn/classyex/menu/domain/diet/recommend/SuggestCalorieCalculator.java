@@ -10,9 +10,9 @@ public class SuggestCalorieCalculator {
     private Float bmr;
     private Float factor;
 
-    public SuggestCalorieCalculator(Float bmr, Long lastWeekExerciseHour) {
+    public SuggestCalorieCalculator(Float bmr, Long lastWeekExerciseSeconds) {
         this.bmr = bmr;
-        this.factor = calcFactor(lastWeekExerciseHour);
+        this.factor = calcFactor(lastWeekExerciseSeconds);
     }
 
     private Float calcFactor(Long lastWeekExerciseTime) {
