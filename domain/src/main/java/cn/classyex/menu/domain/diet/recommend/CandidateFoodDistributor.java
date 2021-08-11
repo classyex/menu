@@ -15,10 +15,10 @@ import java.util.function.Function;
  */
 public class CandidateFoodDistributor {
 
-    public static final int MAX_STAPLE = 3;
-    public static final int MAX_MEAT = 3;
-    public static final int MAX_VEGETABLE = 2;
-    public static final int MIN_NUM = 1;
+    private static final int MAX_STAPLE = 3;
+    private static final int MAX_MEAT = 3;
+    private static final int MAX_VEGETABLE = 2;
+    private static final int MIN_NUM = 1;
     private final Food staple;
     private final Food meat;
     private final Food vegetable;
@@ -86,7 +86,7 @@ public class CandidateFoodDistributor {
     }
 
     private boolean isSuggestCalorieRange(int calorie) {
-        return calorie >= suggestCalorie * 0.8 && calorie <= suggestCalorie;
+        return calorie >= suggestCalorie * 0.8;
     }
 
     public CandidateFoodGroup getOptimalCandidateFoodGroup() {
