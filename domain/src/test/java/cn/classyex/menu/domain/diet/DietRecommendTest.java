@@ -48,6 +48,21 @@ public class DietRecommendTest {
     }
 
     @Test
+    public void random_recommend_1800_calorie_diet_total_calorie_should_between_640_and_800() {
+        RandomElement.setResultSupplier(() -> 1);
+        List<Food> stapleFood = getStapleFoods();
+        List<Food> meat = getMeatFoods();
+        List<Food> vegetables = getVegetablesFoods();
+        DietRecommendOperator operator = new DietRecommendOperator(stapleFood, meat, vegetables);
+        int suggestCalorie = 1800;
+        List<Food> recommendFoods = operator.recommend(suggestCalorie);
+        Assertions.assertThat(recommendFoods.size()).isEqualTo(3);
+        Assertions.assertThat(recommendFoods.get(0).getCalorie()).isEqualTo(106);
+        Assertions.assertThat(recommendFoods.get(1).getCalorie()).isEqualTo(156);
+        Assertions.assertThat(recommendFoods.get(2).getCalorie()).isEqualTo(26);
+    }
+
+    @Test
     public void random_recommend_1800_calorie_diet_should_default() {
         RandomElement.setResultSupplier(() -> 1);
         List<Food> stapleFood = getStapleFoods();
@@ -64,38 +79,24 @@ public class DietRecommendTest {
 
     private List<Food> getVegetablesFoods() {
         List<Food> vegetables = new ArrayList<>();
-        vegetables.add(createFood("生菜,94,13,1.3,1.3,0.3"));
-        vegetables.add(createFood("韭菜,90,26,3.2,2.4,0.4"));
+        vegetables.add(FoodFactory.lettuce);
+        vegetables.add(FoodFactory.leek);
         return vegetables;
     }
 
     private List<Food> getMeatFoods() {
         List<Food> meat = new ArrayList<>();
-        meat.add(createFood("猪瘦肉,100,143,1.5,20.3,6.2"));
-        meat.add(createFood("鸡蛋,88,156,1.3,12.8,11.1"));
-        meat.add(createFood("基围虾,60,101,3.9,18.2,1.4"));
+        meat.add(FoodFactory.lean);
+        meat.add(FoodFactory.egg);
+        meat.add(FoodFactory.shrimp);
         return meat;
     }
 
     private List<Food> getStapleFoods() {
         List<Food> stapleFood = new ArrayList<>();
-        stapleFood.add(createFood("米饭,100,114,25.6,2.5,0.2"));
-        stapleFood.add(createFood("玉米,46,106,19.9,4,1.2"));
+        stapleFood.add(FoodFactory.rice);
+        stapleFood.add(FoodFactory.corn);
         return stapleFood;
     }
-
-    private Food createFood(String param) {
-        String[] split = param.split(",");
-        return Food.builder()
-                .name(split[0])
-                .weight(Integer.valueOf(split[1]))
-                .calorie(Integer.valueOf(split[2]))
-                .carbohydrate(Float.valueOf(split[3]))
-                .protein(Float.valueOf(split[4]))
-                .axunge(Float.valueOf(split[5]))
-                .quantity(1F)
-                .build();
-    }
-
 
 }
