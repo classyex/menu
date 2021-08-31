@@ -9,7 +9,8 @@ import org.springframework.data.repository.CrudRepository;
  * @version 1.0 <br>
  * @date 2021/8/6 17:12 <br>
  */
-public interface MemberDAO extends JpaRepository<MemberDO, Long>, JpaSpecificationExecutor<MemberDO>, CrudRepository<MemberDO, Long> {
+public interface MemberDAO extends JpaRepository<MemberDO, Long>,
+        JpaSpecificationExecutor<MemberDO>, CrudRepository<MemberDO, Long> {
 
     MemberDO findByOpenIdAndStatus(String openId, int status);
 

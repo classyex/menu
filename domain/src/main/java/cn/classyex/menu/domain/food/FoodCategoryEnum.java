@@ -4,6 +4,7 @@ import lombok.Getter;
 
 /**
  * 食物分类枚举
+ *
  * @author yex <br>
  * @version 1.0 <br>
  * @date 2021/7/30 9:48 <br>

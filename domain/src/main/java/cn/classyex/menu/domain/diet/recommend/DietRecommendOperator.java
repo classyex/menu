@@ -6,6 +6,8 @@ import cn.classyex.menu.domain.food.Food;
 import java.util.ArrayList;
 import java.util.List;
 
+import static cn.classyex.menu.domain.RandomElement.randomEle;
+
 /**
  * @author yex <br>
  * @version 1.0 <br>
@@ -23,11 +25,12 @@ public class DietRecommendOperator {
     }
 
     public List<Food> recommend(int suggestCalorie) {
-        return assignQuantity(RandomElement.randomEle(stapleFood), RandomElement.randomEle(meats), RandomElement.randomEle(vegetables), suggestCalorie);
+        return assignQuantity(randomEle(stapleFood), randomEle(meats), randomEle(vegetables), suggestCalorie);
     }
 
     private List<Food> assignQuantity(Food staple, Food meat, Food vegetable, int suggestCalorie) {
-        CandidateFoodGroup foodGroup = new CandidateFoodDistributor(staple, meat, vegetable, suggestCalorie).getOptimalCandidateFoodGroup();
+        CandidateFoodGroup foodGroup = new CandidateFoodDistributor(staple, meat, vegetable, suggestCalorie)
+                .getOptimalCandidateFoodGroup();
         List<Food> result = new ArrayList<>(3);
         result.add(staple.newFoodForQuantity((float) foodGroup.getStapleNum()));
         result.add(meat.newFoodForQuantity((float) foodGroup.getMeatNum()));

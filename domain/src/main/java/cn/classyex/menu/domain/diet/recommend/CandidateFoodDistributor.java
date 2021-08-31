@@ -74,7 +74,8 @@ public class CandidateFoodDistributor {
     }
 
     private int calcMeatNum(int vegetableNum, int stapleNum) {
-        return (suggestCalorie - staple.getCalorie() * stapleNum - vegetable.getCalorie() * vegetableNum) / meat.getCalorie();
+        int remainCalorie = suggestCalorie - staple.getCalorie() * stapleNum - vegetable.getCalorie() * vegetableNum;
+        return remainCalorie / meat.getCalorie();
     }
 
     private int getMaxStaple() {

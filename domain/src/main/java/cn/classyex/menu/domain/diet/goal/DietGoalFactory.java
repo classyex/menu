@@ -7,7 +7,7 @@ package cn.classyex.menu.domain.diet.goal;
  */
 public class DietGoalFactory {
 
-    public final static DietGoalFactory INSTANCE = new DietGoalFactory();
+    public static final DietGoalFactory INSTANCE = new DietGoalFactory();
 
     private DietGoalFactory() {
     }

@@ -39,13 +39,13 @@ public class DietRecommend {
 
     public DietRecommend(FoodService foodService, int suggestCalorie, Integer goal) {
         this.foodService = foodService;
-        DietGoal dietGoal = DietGoalFactory.INSTANCE.newInstance(goal, suggestCalorie);
-        DietMeal dietMeals = recommendMeal(suggestCalorie);
         this.dietGoal = goal;
         this.suggestCalorie = suggestCalorie;
-        this.suggestCalorieRange = dietGoal.calcSuggestCalorieRange();
+        DietMeal dietMeals = recommendMeal(suggestCalorie);
         this.dietMeal = dietMeals;
         this.currentCalorie = dietMeals.sumCalorieAmount();
+        DietGoal dietGoal = DietGoalFactory.INSTANCE.newInstance(goal, suggestCalorie);
+        this.suggestCalorieRange = dietGoal.calcSuggestCalorieRange();
         this.axunge = dietGoal.calcAxungeIngredient(dietMeals.sumAxungeAmount());
         this.carbohydrate = dietGoal.calcCarbohydrateIngredient(dietMeals.sumCarbohydrateAmount());
         this.protein = dietGoal.calcProteinIngredient(dietMeals.sumProteinAmount());

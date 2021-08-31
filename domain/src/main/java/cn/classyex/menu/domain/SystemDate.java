@@ -17,10 +17,6 @@ public class SystemDate {
     public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static Supplier<Long> nowSupplier = System::currentTimeMillis;
 
-    public static void setNowSupplier(Supplier<Long> nowSupplier) {
-        SystemDate.nowSupplier = nowSupplier;
-    }
-
     public static long now() {
         return nowSupplier.get();
     }
@@ -35,6 +31,10 @@ public class SystemDate {
 
     public static String today() {
         return now(DATE_FORMATTER);
+    }
+
+    public static void setNowSupplier(Supplier<Long> nowSupplier) {
+        SystemDate.nowSupplier = nowSupplier;
     }
 
     public static void setNowSupplier(String date) {
