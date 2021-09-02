@@ -1,13 +1,16 @@
 package cn.classyex.menu.domain;
 
+import org.springframework.cglib.core.Local;
+
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.function.Supplier;
 
 public class SystemDate {
-    public static final long ONE_DAY = 86400 * 1000L;
 
     private SystemDate() {
 
@@ -23,6 +26,18 @@ public class SystemDate {
 
     public static String now(DateTimeFormatter formatter) {
         return Instant.ofEpochMilli(now()).atZone(ZoneId.systemDefault()).format(formatter);
+    }
+
+    public static Date date() {
+        return new Date(nowSupplier.get());
+    }
+
+    public static LocalDateTime localDateTime() {
+        return LocalDateTime.ofInstant(Instant.ofEpochMilli(nowSupplier.get()), ZoneId.systemDefault());
+    }
+
+    public static LocalDate localDate() {
+        return localDateTime().toLocalDate();
     }
 
     public static String format(long time) {
@@ -43,4 +58,6 @@ public class SystemDate {
             return localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
         });
     }
+
+
 }
